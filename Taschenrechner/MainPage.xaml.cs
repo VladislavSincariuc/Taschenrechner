@@ -25,6 +25,19 @@ namespace Taschenrechner
         public MainPage()
         {
             this.InitializeComponent();
+
+            Application.Current.DebugSettings.EnableFrameRateCounter = false;
+        }
+
+
+        private void FirstNumberTextBox_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void SecondNumberTextBox_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
