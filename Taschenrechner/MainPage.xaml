@@ -18,11 +18,11 @@
             <TextBox x:Name="SecondNumberTextBox" RelativePanel.AlignLeftWith="FirstNumberTextBox" RelativePanel.Below="FirstNumberTextBox" Width="250" TextChanged="SecondNumberTextBox_OnTextChanged"></TextBox>
        
             <TextBlock x:Name="OperatorTextBlock" RelativePanel.RightOf="FirstNumberTextBox" Margin="12, 6, 12, 0">Operator:</TextBlock>
-            <Button x:Name="AdditionButton" RelativePanel.RightOf="OperatorTextBlock">+</Button>
-            <Button x:Name="SubstractionButton" RelativePanel.RightOf="AdditionButton" Margin="4, 0, 0, 0">-</Button>
-            <Button x:Name="MultiplicationButton" RelativePanel.RightOf="SubstractionButton" Margin="4, 0, 0, 0">*</Button>
-            <Button x:Name="DivisionButton" RelativePanel.RightOf="MultiplicationButton" Margin="4, 0, 0, 0">/</Button>
-            <Button x:Name="ModuloButton" RelativePanel.RightOf="DivisionButton" Margin="4, 0, 0, 0">%</Button>
+            <Button x:Name="AdditionButton" RelativePanel.RightOf="OperatorTextBlock" Click="AdditionButton_OnClick">+</Button>
+            <Button x:Name="SubstractionButton" RelativePanel.RightOf="AdditionButton" Margin="4, 0, 0, 0" Click="SubstractionButton_OnClick">-</Button>
+            <Button x:Name="MultiplicationButton" RelativePanel.RightOf="SubstractionButton" Margin="4, 0, 0, 0" Click="MultiplicationButton_OnClick">*</Button>
+            <Button x:Name="DivisionButton" RelativePanel.RightOf="MultiplicationButton" Margin="4, 0, 0, 0" Click="DivisionButton_OnClick">/</Button>
+            <Button x:Name="ModuloButton" RelativePanel.RightOf="DivisionButton" Margin="4, 0, 0, 0" Click="ModuloButton_OnClick">%</Button>
 
             <TextBlock x:Name="ResultDescriptionTextBlock" RelativePanel.RightOf="SecondNumberTextBox" RelativePanel.AlignVerticalCenterWith="SecondNumberTextBlock" Margin="12, 0, 16, 0">Ergebnis:</TextBlock>
             <TextBlock x:Name="ResultTextBlock" RelativePanel.RightOf="ResultDescriptionTextBlock" RelativePanel.AlignVerticalCenterWith="ResultDescriptionTextBlock">0</TextBlock>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -30,14 +31,71 @@ namespace Taschenrechner
         }
 
 
+        private string _firstNumberLastValidInput = "";
+        private double _firstNumber;
+
         private void FirstNumberTextBox_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if(FirstNumberTextBox.Text == "")
+                    _firstNumber = 0;
+                else
+                    _firstNumber = Convert.ToDouble(FirstNumberTextBox.Text);
+
+                _firstNumberLastValidInput = _firstNumber.ToString();
+            }
+            catch
+            {
+                FirstNumberTextBox.Text = _firstNumberLastValidInput;
+                FirstNumberTextBox.Select(FirstNumberTextBox.Text.Length, 0);
+            }
         }
+
+        private string _secondNumberLastValidInput = "";
+        private double _secondNumber;
 
         private void SecondNumberTextBox_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (SecondNumberTextBox.Text == "")
+                    _secondNumber = 0;
+                else
+                    _secondNumber = Convert.ToDouble(SecondNumberTextBox.Text);
+
+                _secondNumberLastValidInput = _secondNumber.ToString();
+            }
+            catch
+            {
+                SecondNumberTextBox.Text = _secondNumberLastValidInput;
+                SecondNumberTextBox.Select(SecondNumberTextBox.Text.Length, 0);
+            }
+        }
+
+        private void AdditionButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = (_firstNumber + _secondNumber).ToString();
+        }
+
+        private void SubstractionButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = (_firstNumber - _secondNumber).ToString();
+        }
+
+        private void MultiplicationButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = (_firstNumber * _secondNumber).ToString();
+        }
+
+        private void DivisionButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = (_firstNumber / _secondNumber).ToString();
+        }
+
+        private void ModuloButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = (_firstNumber % _secondNumber).ToString();
         }
     }
 }
